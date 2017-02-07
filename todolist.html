@@ -15,12 +15,15 @@
   <div id="todo-list">
     {{ nombre }}
 
-    <input type="text" v-model="nombre">
+    <input type="text" v-model="nuevaTarea" placeholder="Introduce la nueva tarea">
 
-    <input type="button" value="Nueva Tarea" @click="guardarTarea(nombre)">
+    <input type="button" value="Nueva Tarea" @click="guardarTarea(nuevaTarea)">
 
     <ul>
-      <li v-for="tarea in tareas"> {{ tarea.nombre }}</li>
+      <li v-for="tarea in tareas | orderBy 'nombre' 1">
+        <a href="#" @click="eliminarTarea(tarea)">X</a>
+        {{ tarea.nombre }}
+      </li>
     </ul>
 
     <pre>
