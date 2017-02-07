@@ -20,7 +20,7 @@
     <input type="button" value="Nueva Tarea" @click="guardarTarea(nuevaTarea)">
 
     <ul>
-      <li v-for="tarea in tareas | orderBy 'nombre' 1">
+      <li v-for="tarea in tareas ">
         <a href="#" @click="eliminarTarea(tarea)">X</a>
         {{ tarea.nombre }}
       </li>
