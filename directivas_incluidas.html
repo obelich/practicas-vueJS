@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Directivas Incluidas</title>
+</head>
+<body>
+
+<main>
+  <h1 v-show="conectado">Estoy Conectado</h1>
+
+  <p v-show="desconectado">
+    Esto esta desconectado
+  </p>
+
+  <p v-if="desconectado == false">
+    Esto esta desconectado, la diferencia entre v-show y v-if es que v-show esconde el elemento mientras que
+    v-if elimina el elemtendo del DOM.
+    <br />
+    <br />
+    Tambien el v-if es muy demandante en cuanto al rendimiento mientras que v-show no
+  </p>
+
+  <h2 v-if="edad < 18">No puedes entrar.</h2>
+  <h2 v-else-if="edad > 200">Eres Inmortal.</h2>
+  <h2 v-else>puedes entrar.</h2>
+
+
+  <template v-if="conectado">
+    <p>
+      Usando la etiqueta template se pueden englobar varias acciones ya que la etiqueta en la renderizacion
+      no se muestra
+    </p>
+    <h3>Bienvenido Obelich</h3>
+    <h3>
+      <ul>
+        <li>
+          <a href="#">Misdatos</a>
+          <a href="#">Mensajes</a>
+          <a href="#">Salir</a>
+        </li>
+      </ul>
+    </h3>
+  </template>
+  <h4 v-else>No estás conectado >.<</h4>
+</main>
+<script src="js/vue.js"></script>
+
+<script src="js/directivas_incluidas.js"></script>
+</body>
+</html>
