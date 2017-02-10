@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Renderizado de Listas</title>
+</head>
+<body>
+
+
+
+  <main>
+    <h2>Dias laborales de la semana</h2>
+    <ul>
+      <li v-for="dia in laborales"> {{dia }} </li>
+    </ul>
+
+    <hr>
+
+    <h2>Listado de tareas</h2>
+
+    <ul>
+      <li v-for="tarea in tareas"></li>
+    </ul>
+  </main>
+
+  <script src="js/vue.js"></script>
+  <script src="js/renderizado_de_listas.js"></script>
+</body>
+</html>
