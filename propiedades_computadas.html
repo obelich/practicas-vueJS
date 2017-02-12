@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Propiedades Computadas</title>
+</head>
+<body>
+
+  <main>
+      <h1> {{ mensajeAlReves }} </h1>
+
+    <h2>Mostrar todas las tareas</h2>
+    <ul>
+      <li v-for="tarea in tareas">
+        {{ tarea.titulo }}
+      </li>
+    </ul>
+
+
+    <hr>
+    <h2>Mostrar las tareas solo con prioridad</h2>
+    <ul>
+      <li v-for="tarea in tareasConPrioridad">
+        {{ tarea.titulo }}
+      </li>
+    </ul>
+
+    <hr>
+    <h2>Mostrar las tareas por antiguedad</h2>
+    <ul>
+      <li v-for="tarea in tareasPorAntiguedad">
+        {{ tarea.titulo }}
+      </li>
+    </ul>
+
+
+
+    <form v-on:submit.prevent="agregarTara">
+      <input type="text" placeholder="Introduce tu tarea usando form" v-model="nuevaTarea"><br />
+      <input type="submit" value="Enviar tarea" >
+    </form>
+  </main>
+
+<script src="js/vue.js"></script>
+<script src="js/propiedades_computadas.js"></script>
+</body>
+</html>

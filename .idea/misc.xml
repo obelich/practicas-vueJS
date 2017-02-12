@@ -44,6 +44,9 @@
     </unboundedVersionInspectionSettings>
     <customRepositories />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>false</service-enabled>
     <exe-path />
