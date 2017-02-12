@@ -10,6 +10,12 @@ vm = new Vue({
       {nombre: 'Hacer la compra', prioridad: 'Baja'},
       {nombre: 'Aprender VUE y Firebase', prioridad: 'Alta'},
       {nombre: 'Ir al gimnasio', prioridad: 'Alta'}
-    ]
+    ],
+
+    persona: {
+      nombre: 'Oscar Miguel Amezcua',
+      profesion: 'Developer',
+      ciudad: 'Tijuana'
+    }
   }
 });
