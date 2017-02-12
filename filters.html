@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtros</title>
+</head>
+<body>
+
+<main>
+
+  <input type="range" min="0" max="10" v-model="minimo">
+  <ul>
+    <li v-for="juego in mejoresJuegos">
+      {{ juego.titulo }}
+    </li>
+  </ul>
+</main>
+
+
+<script src="js/vue.js"></script>
+<script src="js/filtros.js"></script>
+
+</body>
+</html>
