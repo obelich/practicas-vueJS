@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos</title>
+</head>
+<body>
+<main>
+
+  <ul>
+    <li v-for="tarea in tareas">
+      {{ tarea }}
+    </li>
+  </ul>
+
+  <input type="text" placeholder="Introduce tu tarea click al boton" v-model="nuevaTarea"><br />
+  <input type="button" value="Enviar tarea" v-on:click="agregarTara">
+  <br />
+
+  <hr>
+  <input type="text" placeholder="Introduce tu tarea y preciona Enter" v-model="nuevaTarea" v-on:keyup.enter="agregarTara">
+
+
+
+  <hr>
+
+
+  <h2>Usando Form</h2>
+  <form v-on:submit.prevent="agregarTara">
+    <input type="text" placeholder="Introduce tu tarea usando form" v-model="nuevaTarea"><br />
+    <input type="submit" value="Enviar tarea" >
+  </form>
+
+  <pre>
+    {{ $data }}
+  </pre>
+</main>
+
+
+<script src="js/vue.js"></script>
+<script src="js/eventos.js"></script>
+
+
+</body>
+</html>
