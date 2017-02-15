@@ -8,12 +8,26 @@
 
 <main>
 
+
   <input type="range" min="0" max="10" v-model="minimo">
   <ul>
     <li v-for="juego in mejoresJuegos">
       {{ juego.titulo }}
     </li>
   </ul>
+
+  <hr>
+
+  <h2>Busqueda de Juegos</h2>
+  <input type="text" v-model="busqueda">
+
+  <ul>
+    <li v-for="j in buscarJuego">
+      {{ j.titulo }}
+    </li>
+  </ul>
+
+
 </main>
 
 

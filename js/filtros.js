@@ -7,6 +7,7 @@ var app = new Vue({
   data: {
     message: 'Hello Vue!',
     minimo: 8,
+    busqueda: '',
     juegos: [
       {
         titulo: 'Counter Strike GO',
@@ -27,14 +28,20 @@ var app = new Vue({
         titulo: 'Capitan comando',
         genero: 'plataformas',
         puntuacion: 7,
-      },
+      }
     ]
   },
 
   computed: {
     mejoresJuegos() {
       return this.juegos.filter((juego) => juego.puntuacion >= this.minimo);
+    },
+    buscarJuego() {
+      return this.juegos.filter((juego) => juego.titulo.includes(this.busqueda));
+
     }
+
+
   }
 
 });
