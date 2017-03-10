@@ -61,7 +61,6 @@
       <PhpUnitSettings load_method="CUSTOM_LOADER" />
     </phpunit_settings>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
