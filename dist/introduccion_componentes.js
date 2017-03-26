@@ -68,41 +68,56 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Created by obelich on 25/03/17.
  */
-// Vue.component('mis-tareas', require('./templates/mis_tareas.vue'));
+Vue.component('mis-tareas', __webpack_require__(1));
 
-
-Vue.component('mis-tareas', {
-  props: ['tareas'],
-  template: `
-    <ul>
-      <li v-for="tarea in tareas">{{tarea.title}} </li>
-    </ul>
-  `
-});
+//
+// Vue.component('mis-tareas', {
+//   props: ['tareas'],
+//   template: `
+//     <ul>
+//       <li v-for="tarea in tareas">{{tarea.title}} </li>
+//     </ul>
+//   `
+// });
 
 
 new Vue({
   el: 'main',
 
+  mounted: function(){
+    let _this = this;
+    axios.get('https://jsonplaceholder.typicode.com/todos').then(function(response){
+      _this.tareasAjax = response.data;
+    })
 
-
-  mounted(){
-      axios.get('https://jsonplaceholder.typicode.com/todos').then((response) =>{
-          this.tareasAjax = response.data;
-          console.log(tareasAjax);
-    });
   },
 
   data: {
     tareasAjax: []
   },
 
+
+  // mounted(){
+  //     axios.get('https://jsonplaceholder.typicode.com/todos').then((response) =>{
+  //         this.tareasAjax = response.data;
+  //         console.log(tareasAjax);
+  //   });
+  // },
+
+
+
 });
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: /home/obelich/git/estudiandoVueJs/js/templates/mis_tareas.vue Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n| <template>\n|   <div>\n|     <ul>");
 
 /***/ })
 /******/ ]);

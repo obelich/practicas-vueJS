@@ -3,7 +3,6 @@
  */
 // Vue.component('mis-tareas', require('./templates/mis_tareas.vue'));
 
-
 Vue.component('mis-tareas', {
   props: ['tareas'],
   template: `
@@ -17,17 +16,32 @@ Vue.component('mis-tareas', {
 new Vue({
   el: 'main',
 
+  mounted: function(){
+    let _this = this;
+    axios.get('https://jsonplaceholder.typicode.com/todos').then(function(response){
+      _this.tareasAjax = response.data;
+    })
 
-
-  mounted(){
-      axios.get('https://jsonplaceholder.typicode.com/todos').then((response) =>{
-          this.tareasAjax = response.data;
-          console.log(tareasAjax);
-    });
   },
 
   data: {
-    tareasAjax: []
+    tareasAjax: [],
+    tareasLocales: [
+      {title: 'Mitarea 1'},
+      {title: 'Mitarea 2'},
+      {title: 'Mitarea 3'},
+      {title: 'Mitarea 4'}
+    ]
   },
+
+
+  // mounted(){
+  //     axios.get('https://jsonplaceholder.typicode.com/todos').then((response) =>{
+  //         this.tareasAjax = response.data;
+  //         console.log(tareasAjax);
+  //   });
+  // },
+
+
 
 });
