@@ -13,6 +13,40 @@ Vue.component('mis-tareas', {
 });
 
 
+Vue.component('mis-tareas-independientes', {
+  template: `
+    <ul>
+      <li v-for="tarea in tareasAjax">{{tarea.title}} </li>
+    </ul>
+  `,
+  mounted: function(){
+
+    var _this = this;
+    axios.get('https://jsonplaceholder.typicode.com/todos').then(function(response){
+      _this.tareasAjax = response.data;
+      console.log('hola')
+    })
+
+  },
+
+  data: function(){
+    return {
+      tareasAjax: [],
+      tareasLocales: [
+        {title: 'Mitarea 1'},
+        {title: 'Mitarea 2'},
+        {title: 'Mitarea 3'},
+        {title: 'Mitarea 4'}
+      ]
+    }
+
+  }
+});
+
+
+
+
+
 new Vue({
   el: 'main',
 
