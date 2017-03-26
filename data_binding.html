@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Data Binding</title>
 </head>
 <body>
-$END$
+
+<main>
+
+  <h1>Tareas</h1>
+
+  <ul>
+    <li v-for="tarea in tareas">
+      {{tarea.titulo }}
+    </li>
+  </ul>
+</main>
+
+
+
+<script src="js/vue.js"></script>
+<script src="js/data_binding.js"></script>
+
 </body>
 </html>
